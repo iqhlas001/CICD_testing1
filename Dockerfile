@@ -1,9 +1,7 @@
 FROM  ubuntu:latest
 
-RUN sudo apt -y install yum
-RUN yum install -y httpd \
- zip\
- unzip
+RUN sudo apt update
+RUN sudo apt install apache2
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
